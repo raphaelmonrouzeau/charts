@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+if [[ ! -d "$1" ]]; then
+	printf "Usage : %s CHART_PATH\n" "$(basename "$0")"
+	exit 255
+fi
+
+if [[ ! -d ./repository ]]; then
+	printf "You must be in the root of the source code repository"
+	printf " (with ./repository aside).\n"
+	exit 1
+fi
+
+if [[ ! -f ~/.gnupg/secring.gpg ]]; then
+	# GnuPG 2.1 uses a new file format
+	# See https://github.com/helm/helm/issues/2843
+	touch ~/.gnupg/secring.gpg
+	chmod 600 ~/.gnupg/secring.gpg
+	gpg --export-secret-keys > ~/.gnupg/secring.gpg
+fi
+if [[ ! -f ~/.gnupg/pubring.gpg ]]; then
+	# GnuPG 2.1 uses a new file format
+	# See https://github.com/helm/helm/issues/2843
+	touch ~/.gnupg/pubring.gpg
+	chmod 600 ~/.gnupg/pubring.gpg
+	gpg --export > ~/.gnupg/pubring.gpg
+fi
+
+helm package \
+	--sign "$1" \
+	--key "Raphaël MONROUZEAU" \
+	--keyring ~/.gnupg/secring.gpg \
+	-d ./repository
+
+helm repo index ./repository
+
+git add -A ./repository && git commit -m "Published $1" && git push
