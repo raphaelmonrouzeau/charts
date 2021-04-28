@@ -1,0 +1,35 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+apiVersion: v2
+appVersion: 13.0.0
+description: Dolibarr is an Open Source ERP & CRM suitable to SMEs, Large Companies, Freelancers or Foundations. This chart is based on https://github.com/Monogramm/docker-dolibarr
+home: https://github.com/raphaelmonrouzeau/dolibarr-chart
+icon: https://wiki.dolibarr.org/images/5/51/Dolibarr_124x124_white.svg
+keywords:
+- - erp
+- - crm
+maintainers:
+- - email: raphael.monrouzeau@gmail.com
+  name: raphael
+name: dolibarr
+sources:
+- - https://github.com/raphaelmonrouzeau/dolibarr-chart
+version: 0.0.1
+
+...
+files:
+  dolibarr-0.0.1.tgz: sha256:87cb84b5595e5305150c610725ae9c81669336ddccdda83351ba4f228c57b6ce
+-----BEGIN PGP SIGNATURE-----
+
+wsDcBAEBCgAQBQJgiX8ZCRAix2w5+hRIAwAAsJcMAIwsf9MNfaKA8mtOoZy5hFW+
+gcN7wpgEy8Mj3E+KGj6+GxSRQ8ATF7NqOoShJevhyUc0ttof1AGYj5Vc97jm3rNx
+OUQ91mACuub6a7czmfC9k2Oa1+xU4aMlIBm6kGeCCO1jukQno1LHgzJn57f8TGYP
+zYCZY1DakfwbUTEHpzkoNQIMAELKsnOMmB9wzEUT5ZBWFHjaUEcxISGXsyC1SQVe
+UhmwGkXcod+vgvNZH/KN9GjGuNpsNlOTizWo1hPSAInlZ2GVnghjRM+cgKrBy2EF
+1kV8uTQk9c1fhxCdJKOAw22/otE5POl9H6FBNgH6ewxudElPZUQrYzfjX0O0n1yM
+Q3ZeQ0hqNuro8syL6Fr9LP3QqyyZqWNIQXLpddDaq4bPfRqxl9UBJP50Xy4JKRhX
+hlDExonjiXWFGru5CRwNcaobRDtniB21yOkJQESBdewF8WO7wjgSFQ1g/zqTjmbT
+5PQ0tQUJh7fiDP1AOQR+hRUpwVWGM48t61Ac6NP0kw==
+=HhJY
+-----END PGP SIGNATURE-----
